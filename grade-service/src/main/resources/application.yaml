@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition : costResourceProcessor;costResource1Processor;costResource2Processor;costResource3Processor
+      bindings:
+        costResourceProcessor-in-0 :
+          destination: budget-event
+        costResource1Processor-in-0:
+          destination: budget-event
+        costResource2Processor-in-0:
+          destination: budget-event
+        costResource3Processor-in-0:
+          destination: budget-event
+        costResourceProcessor-out-0:
+          destination: costResource-event
+        costResource1Processor-out-0:
+          destination: costResource-event
+        costResource2Processor-out-0:
+          destination: costResource-event
+        costResource3Processor-out-0:
+          destination: costResource-event
+
+#  kafka:
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+server:
+  port: 8085

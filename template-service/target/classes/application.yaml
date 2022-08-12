@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition : templateProcessor
+      bindings:
+        templateProcessor-in-0 :
+          destination: budget-event
+        templateProcessor-out-0:
+          destination: template-event
+
+
+server:
+  port: 8082

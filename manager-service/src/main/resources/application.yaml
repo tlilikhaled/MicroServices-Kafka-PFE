@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition : budgetSupplier;templateEventConsumer
+      bindings:
+        budgetSupplier-out-0:
+          destination: budget-event
+        templateEventConsumer-in-0 :
+          destination: template-event
+
+
+
+server:
+  port: 8081
